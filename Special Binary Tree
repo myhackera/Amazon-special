@@ -1,0 +1,12 @@
+def isSpecialBinaryTree(root):
+    
+    if root.left is None and root.right is None:
+        return True
+        
+    elif (root.left and root.right is None) or (root.right and root.left is None):
+        return False
+        
+    if isSpecialBinaryTree(root.left) and isSpecialBinaryTree(root.right):
+        return True
+        
+    return False
